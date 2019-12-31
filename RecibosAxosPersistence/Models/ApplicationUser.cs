@@ -18,5 +18,6 @@ namespace RecibosAxosPersistence.Models
             // Agregar aquí notificaciones personalizadas de usuario
             return userIdentity;
         }
+        public List<Recibo> Recibos { get; set; }
     }
 }

@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using RecibosAxosApi.Models;
 using RecibosAxosApi.Providers;
 using RecibosAxosApi.Results;
+using RecibosAxosPersistence.Models;
 
 namespace RecibosAxosApi.Controllers
 {

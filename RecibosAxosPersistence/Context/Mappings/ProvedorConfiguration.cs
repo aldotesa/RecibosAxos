@@ -16,7 +16,7 @@ namespace RecibosAxosPersistence.Context.Mappings
             HasKey(x => x.Id);
             Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.Nombre).HasMaxLength(100).IsRequired();
-            HasMany(x => x.Recibos).WithRequired(x => x.Provedor).HasForeignKey(x => x.ProvedorId);
+            HasMany(x => x.Recibos).WithRequired(x => x.Provedor).HasForeignKey(x => x.IdProvedor);
         }
     }
 }

@@ -14,6 +14,8 @@ namespace RecibosAxosPersistence.Models
         public DateTime Fecha { get; set; }
         public string Comentario { get; set; }
         public virtual Provedor Provedor { get; set; }
-        public Guid ProvedorId { get; set; }
+        public Guid IdProvedor { get; set; }
+        public ApplicationUser Usuario { get; set; }
+        public string IdUsuario { get; set; }
     }
 }

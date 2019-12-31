@@ -4,6 +4,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using RecibosAxosApi.Models;
+using RecibosAxosPersistence.Context;
+using RecibosAxosPersistence.Models;
 
 namespace RecibosAxosApi
 {

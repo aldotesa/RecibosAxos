@@ -23,6 +23,7 @@ namespace RecibosAxosPersistence.Context
         {
             modelBuilder.Entity<ApplicationUser>();
             modelBuilder.Entity<ApplicationUser>().ToTable("ApplicationUsers");
+            modelBuilder.Entity<ApplicationUser>().HasMany(x=>x.Recibos).WithRequired(x=>x.Usuario).HasForeignKey(x=>x.IdUsuario);
             modelBuilder.Entity<IdentityRole>();
             modelBuilder.Entity<IdentityUserRole>();
             modelBuilder.Entity<IdentityUserClaim>();

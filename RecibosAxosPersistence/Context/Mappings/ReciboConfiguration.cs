@@ -20,7 +20,8 @@ namespace RecibosAxosPersistence.Context.Mappings
             Property(x => x.Fecha).IsRequired();
             Property(x=>x.Moneda).IsRequired();
             Property(x=>x.Comentario).IsOptional();
-            HasRequired(x => x.Provedor).WithMany(x=>x.Provedores).HasForeignKey(x=>x.ProvedorId);
+            HasRequired(x => x.Provedor).WithMany(x=>x.Recibos).HasForeignKey(x=>x.IdProvedor);
+            HasRequired(x => x.Usuario).WithMany(x => x.Recibos).HasForeignKey(x=>x.IdUsuario);
         }
     }
 }
