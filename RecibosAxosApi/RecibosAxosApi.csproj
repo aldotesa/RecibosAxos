@@ -236,6 +236,7 @@
     <Compile Include="Utils\AxosResponse.cs" />
     <Compile Include="Utils\Devextreme\DataSourceLoadOptions.cs" />
     <Compile Include="Utils\FilterException.cs" />
+    <Compile Include="Utils\FiltroSwagger.cs" />
     <Compile Include="Utils\ListUtil.cs" />
     <Compile Include="Utils\Request\ReciboRequest.cs" />
     <Compile Include="Utils\ViewModels\ReciboViewModel.cs" />
