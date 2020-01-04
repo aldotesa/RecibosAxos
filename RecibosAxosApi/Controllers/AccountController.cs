@@ -74,13 +74,13 @@ namespace RecibosAxosApi.Controllers
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
+            
             if (!result.Succeeded)
             {
                 return Content(HttpStatusCode.BadRequest, new AxosResponse(string.Join("", result
                                        .Errors)));
             }
-
+            UserManager.AddToRole(user.Id, "Administracion");
             return Content(System.Net.HttpStatusCode.Created, new AxosResponse($"Se registro correctamente {model.Email}"));
         }
 
