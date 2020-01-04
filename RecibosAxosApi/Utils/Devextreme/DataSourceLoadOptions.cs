@@ -9,6 +9,9 @@ using System.Web.Http.ModelBinding;
 
 namespace RecibosAxosApi.Utils.Devextreme
 {
+    /// <summary>
+    /// Implementación de ASP.NET DATA https://github.com/DevExpress/DevExtreme.AspNet.Data#readme
+    /// </summary>
     [ModelBinder(typeof(DataSourceLoadOptionsHttpBinder))]
     public class DataSourceLoadOptions : DataSourceLoadOptionsBase { }
 
@@ -21,13 +24,5 @@ namespace RecibosAxosApi.Utils.Devextreme
             bindingContext.Model = loadOptions;
             return true;
         }
-
-        //public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
-        //{
-        //    var loadOptions = new DataSourceLoadOptions();
-        //    DataSourceLoadOptionsParser.Parse(loadOptions, key => bindingContext.ValueProvider.GetValue(key)?.AttemptedValue);
-        //    bindingContext.Model = loadOptions;
-        //    return true;
-        //}
     }
 }

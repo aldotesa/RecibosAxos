@@ -22,6 +22,9 @@ namespace RecibosAxosApi.Utils.Request
         [Required]
         public Guid IdProvedor { get; set; }
     }
+    /// <summary>
+    /// Clase de request para editar un registro de Recibo
+    /// </summary>
     public class EditarReciboRequest : IRecibo
     {
         [Required]

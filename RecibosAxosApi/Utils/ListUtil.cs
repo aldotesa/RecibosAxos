@@ -5,6 +5,9 @@ using System.Web;
 
 namespace RecibosAxosApi.Utils
 {
+    /// <summary>
+    /// Lista Auxiliar para generar datasource de DxSelectBox
+    /// </summary>
     public class ListUtil
     {
         public string name { get; set; }

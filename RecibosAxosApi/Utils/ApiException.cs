@@ -9,6 +9,10 @@ using System.Web.Http;
 
 namespace RecibosAxosApi.Utils
 {
+
+    /// <summary>
+    /// Excepción que se utiliza para responder de una menera clara a las peticiónes que tengan error del servidor o cliente
+    /// </summary>
     public class ApiException: HttpResponseException
     {
         public ApiException(Exception ex) : base(new HttpResponseMessage(HttpStatusCode.InternalServerError)

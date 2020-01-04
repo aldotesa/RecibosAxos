@@ -18,9 +18,17 @@ using DevExtreme.AspNet.Data;
 
 namespace RecibosAxosApi.Controllers
 {
+    /// <summary>
+    /// Apis de recibos, todas las funcionalidades se encuentran en esta clase, 2 metodos son especiales para devextreme se implementan los tags de swagger para documentación y api client
+    /// Se utilizan los grids optimizados con ASP.NET DATA https://github.com/DevExpress/DevExtreme.AspNet.Data#readme
+    /// </summary>
     [FilterException]
     public class ReciboController : ApiController
     {
+        /// <summary>
+        /// Regresa todos los recibos sin importar el usuario que los realizo, se requiere de un roll especifico
+        /// </summary>
+        /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(AxosResponse<List<ReciboViewModel>>))]
         [HttpGet]
         [Authorize(Roles = "Root")]
@@ -38,6 +46,11 @@ namespace RecibosAxosApi.Controllers
                 return Content(HttpStatusCode.OK, new AxosResponse<List<ReciboViewModel>>(recibos, "Listado de recibos general"));
             }
         }
+
+        /// <summary>
+        /// Regresa los recibos del usuario que los solicita
+        /// </summary>
+        /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(AxosResponse<List<ReciboViewModel>>))]
         [HttpGet]
         [Authorize]
@@ -58,6 +71,11 @@ namespace RecibosAxosApi.Controllers
                 return Content(HttpStatusCode.OK, new AxosResponse<List<ReciboViewModel>>(recibos, $"Listado de recibos del usuario {userName}"));
             }
         }
+        /// <summary>
+        /// Metodo para registrar un recibo
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.Created, Type = typeof(AxosResponse<int>))]
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(AxosResponse))]
         [SwaggerResponse(HttpStatusCode.Conflict, Type = typeof(AxosResponse))]
@@ -84,6 +102,11 @@ namespace RecibosAxosApi.Controllers
                 return Content(HttpStatusCode.Conflict, new AxosResponse("Ocurrió un error al guardar el recibo contacte con la administración"));
             }
         }
+        /// <summary>
+        /// Metodo para eliminar recibo basandose en el id del recibo
+        /// </summary>
+        /// <param name="idRecibo"></param>
+        /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.NoContent, Type = typeof(AxosResponse))]
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(AxosResponse))]
         [SwaggerResponse(HttpStatusCode.Conflict, Type = typeof(AxosResponse))]
@@ -105,7 +128,11 @@ namespace RecibosAxosApi.Controllers
                 return Content(HttpStatusCode.NotFound, new AxosResponse("No se encontro el registro solicitado"));
             }
         }
-
+        /// <summary>
+        /// Edita un registro de recibo basandose en el id
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.NoContent, Type = typeof(AxosResponse))]
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(AxosResponse))]
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(AxosResponse))]
@@ -141,7 +168,11 @@ namespace RecibosAxosApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Regresa un recibo basandose en el id
+        /// </summary>
+        /// <param name="idRecibo"></param>
+        /// <returns></returns>
         [SwaggerResponse(HttpStatusCode.OK, Type = typeof(AxosResponse<Recibo>))]
         [SwaggerResponse(HttpStatusCode.BadRequest, Type = typeof(AxosResponse))]
         [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(AxosResponse))]
@@ -158,6 +189,11 @@ namespace RecibosAxosApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo para grids de devextreme optimizados, implementan DataSourceLoadOptions
+        /// </summary>
+        /// <param name="loadOptions"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpGet]
         public HttpResponseMessage GetRecibosByUserGrid(DataSourceLoadOptions loadOptions)
@@ -175,6 +211,11 @@ namespace RecibosAxosApi.Controllers
             }), loadOptions));
         }
 
+        /// <summary>
+        /// Regresa los recibos generales para un grid optimizado implementa DataSource Load Options
+        /// </summary>
+        /// <param name="loadOptions"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpGet]
         public HttpResponseMessage GetRecibosGlobal(DataSourceLoadOptions loadOptions)

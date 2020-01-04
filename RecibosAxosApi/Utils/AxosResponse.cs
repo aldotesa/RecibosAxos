@@ -6,7 +6,7 @@ using System.Web;
 namespace RecibosAxosApi.Utils
 {
     /// <summary>
-    /// Esta clase se utiliza para estandarizar las respuestas y siempre contengan una descripción y un codigo de respuesta
+    /// Esta clase se utiliza para estandarizar las respuestas y se pueda inyectar cualquier tipo de dato
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class AxosResponse
