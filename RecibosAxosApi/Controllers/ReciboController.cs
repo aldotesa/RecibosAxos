@@ -159,7 +159,8 @@ namespace RecibosAxosApi.Controllers
                     recibo.Moneda = request.Moneda;
                     recibo.Monto = request.Monto;
                     recibo.IdProvedor = request.IdProvedor;
-                    recibo.Comentario = request.Comentario;
+                    if(!string.IsNullOrWhiteSpace(request.Comentario))
+                        recibo.Comentario = request.Comentario;
                     context.SaveChanges();
                     return Content(HttpStatusCode.NoContent, new AxosResponse("Se editó Correctamente"));
                     //return Content(HttpStatusCode.Conflict, new AxosResponse("Ocurrió un error consulte con el administrador del sistema"));
