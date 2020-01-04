@@ -61,6 +61,7 @@
     <Compile Include="Context\Mappings\ProvedorConfiguration.cs" />
     <Compile Include="Context\Mappings\ReciboConfiguration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Interfaces\IRecibo.cs" />
     <Compile Include="Models\Provedor.cs" />
     <Compile Include="Models\Recibo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

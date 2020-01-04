@@ -14,8 +14,8 @@ namespace RecibosAxosPersistence.Context.Mappings
         public ReciboConfiguration()
         {
             ToTable("Recibo");
-            HasKey(x => x.Id);
-            Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(x => x.IdRecibo);
+            Property(x => x.IdRecibo).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Monto).IsRequired();
             Property(x => x.Fecha).IsRequired();
             Property(x=>x.Moneda).IsRequired();

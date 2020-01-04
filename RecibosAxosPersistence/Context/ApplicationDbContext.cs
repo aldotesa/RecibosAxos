@@ -14,6 +14,8 @@ namespace RecibosAxosPersistence.Context
     {
         public ApplicationDbContext(): base("DefaultConnection")
         {
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
         public static ApplicationDbContext Create()
         {

@@ -13,8 +13,8 @@ namespace RecibosAxosPersistence.Context.Mappings
         public ProvedorConfiguration()
         {
             ToTable("Provedor");
-            HasKey(x => x.Id);
-            Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            HasKey(x => x.IdProvedor);
+            Property(x => x.IdProvedor).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.Nombre).HasMaxLength(100).IsRequired();
             HasMany(x => x.Recibos).WithRequired(x => x.Provedor).HasForeignKey(x => x.IdProvedor);
         }

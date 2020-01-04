@@ -12,7 +12,7 @@ namespace RecibosAxosPersistence.Models
         {
             Recibos = new List<Recibo>();
         }
-        public Guid Id { get; set; }
+        public Guid IdProvedor { get; set; }
         public string Nombre { get; set; }
         public virtual ICollection<Recibo> Recibos { get; set; }
     }

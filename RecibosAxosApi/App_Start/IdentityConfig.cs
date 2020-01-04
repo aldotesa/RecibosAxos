@@ -30,11 +30,11 @@ namespace RecibosAxosApi
             // Configure la lógica de validación de contraseñas
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
+                RequiredLength = 0,
                 RequireNonLetterOrDigit = false,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
