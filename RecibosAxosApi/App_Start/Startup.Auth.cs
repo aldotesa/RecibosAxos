@@ -41,7 +41,8 @@ namespace RecibosAxosApi
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 // En el modo de producción establezca AllowInsecureHttp = false
-                AllowInsecureHttp = true
+                AllowInsecureHttp = true,
+                AuthorizationCodeExpireTimeSpan = TimeSpan.FromDays(1)
             };
 
             // Permitir que la aplicación use tokens portadores para autenticar usuarios
